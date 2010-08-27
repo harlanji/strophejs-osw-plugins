@@ -7,6 +7,12 @@
     <packaging>javascript</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 
+	<parent>
+		<groupId>com.devspan.mojo.javascript</groupId>
+		<artifactId>javascript-project</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
+	</parent>
+
     <name>StropheJS OSW Plugins</name>
 	<description>An implementation of OSW standards for StropheJS</description>
     <url>http://github.com/harlanji/strophejs-osw-plugins</url>
@@ -20,17 +26,29 @@
 
     <dependencies>
 		<dependency>
+			<groupId>com.soashable.vendor.strophejs</groupId>
+			<artifactId>strophejs</artifactId>
+			<type>javascript</type>
+			<version>[1.0, 1.1)</version>
+		</dependency>
+		<dependency>
 			<groupId>com.soashable.vendor.jquery</groupId>
 			<artifactId>jquery</artifactId>
 			<type>javascript</type>
-			<version>[1.4.0, 1.5.0)</version>
+			<version>[1.4, 1.5)</version>
 		</dependency>
 		<dependency>
 			<groupId>com.soashable.vendor.rfk</groupId>
 			<artifactId>jquery-xmlns</artifactId>
 			<type>javascript</type>
-			<version>[1.0.0, 1.1.0)</version>
+			<version>[1.0, 1.1)</version>
 		</dependency>
+		<dependency>
+            <groupId>com.soashable.activitystreams</groupId>
+            <artifactId>activitystreams-js</artifactId>
+            <version>[1.0,1.1)</version>
+            <type>javascript</type>
+        </dependency>
     </dependencies>
 
 	<scm>
@@ -45,83 +63,10 @@
 			<name>Harlan Iverson</name>
 			<email>h.iverson@gmail.com</email>
 		</developer>
+		<developer>
+			<id>owengriffin</id>
+			<name>Owen Griffin</name>
+		</developer>
 	</developers>
-
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo.javascript</groupId>
-				<artifactId>javascript-maven-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
-
-	
-
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-oss-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-
-	<profiles>
-		<profile>
-			<id>release-public</id>
-		
-			<distributionManagement>
-				<repository>
-					<id>sonatype-nexus-releases</id>
-					<url>https://oss.sonatype.org/content/repositories/releases/</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-
-		<profile>
-			<id>release-staging</id>
-		
-			<distributionManagement>
-				<repository>
-					<id>sonatype-oss-staging</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-
-		<profile>
-			<id>release-sign-artifacts</id>
-			<activation>
-				<property>
-				<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 
 </project>
