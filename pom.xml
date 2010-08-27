@@ -26,19 +26,19 @@
 
     <dependencies>
 		<dependency>
-			<groupId>com.soashable.vendor.strophejs</groupId>
+			<groupId>com.devspan.vendor.strophejs</groupId>
 			<artifactId>strophejs</artifactId>
 			<type>javascript</type>
 			<version>[1.0, 1.1)</version>
 		</dependency>
 		<dependency>
-			<groupId>com.soashable.vendor.jquery</groupId>
+			<groupId>com.devspan.vendor.jquery</groupId>
 			<artifactId>jquery</artifactId>
 			<type>javascript</type>
 			<version>[1.4, 1.5)</version>
 		</dependency>
 		<dependency>
-			<groupId>com.soashable.vendor.rfk</groupId>
+			<groupId>com.devspan.vendor.rfk</groupId>
 			<artifactId>jquery-xmlns</artifactId>
 			<type>javascript</type>
 			<version>[1.0, 1.1)</version>
