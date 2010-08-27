@@ -1,10 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.soashable.osw</groupId>
-    <artifactId>strophejs-osw-plugins</artifactId>
-    <packaging>javascript</packaging>
+	<groupId>com.soashable.osw</groupId>
+	<artifactId>strophejs-osw-plugins</artifactId>
+	<packaging>javascript</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 
 	<parent>
@@ -13,9 +12,10 @@
 		<version>1.1.0-SNAPSHOT</version>
 	</parent>
 
-    <name>StropheJS OSW Plugins</name>
+	<name>StropheJS OSW Plugins</name>
 	<description>An implementation of OSW standards for StropheJS</description>
-    <url>http://github.com/harlanji/strophejs-osw-plugins</url>
+	<url>http://github.com/harlanji/strophejs-osw-plugins</url>
+
 	<licenses>
 		<license>
 			<name>MIT</name>
@@ -23,21 +23,7 @@
 		</license>
 	</licenses>
 
-<build>
-	<plugins>
-		<plugin>
-			<groupId>com.devspan.mojo.javascript</groupId>
-			<artifactId>javascript-maven-plugin</artifactId>
-			<extensions>true</extensions>
-			<configuration>
-				<workDirectory>${basedir}/target/test-work</workDirectory>
-			</configuration>
-		</plugin>
-	</plugins>
-</build>
-
-
-    <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>com.devspan.vendor.strophejs</groupId>
 			<artifactId>strophejs</artifactId>
@@ -57,17 +43,17 @@
 			<version>[1.0, 1.1)</version>
 		</dependency>
 		<dependency>
-            <groupId>com.soashable.activitystreams</groupId>
-            <artifactId>activitystreams-js</artifactId>
-            <version>[1.0,1.1)</version>
-            <type>javascript</type>
-        </dependency>
-    </dependencies>
+			<groupId>com.soashable.activitystreams</groupId>
+			<artifactId>activitystreams-js</artifactId>
+			<version>[1.0,1.1)</version>
+			<type>javascript</type>
+		</dependency>
+	</dependencies>
 
 	<scm>
-        <connection>scm:git:git://github.com/harlanji/strophejs-osw-plugins.git</connection>
+		<connection>scm:git:git://github.com/harlanji/strophejs-osw-plugins.git</connection>
 		<developerConnection>scm:git:git://github.com/harlanji/strophejs-osw-plugins.git</developerConnection>
-        <url>http://github.com/harlanji/strophejs-osw-plugins</url>
+		<url>http://github.com/harlanji/strophejs-osw-plugins</url>
 	</scm>
 
 	<developers>
