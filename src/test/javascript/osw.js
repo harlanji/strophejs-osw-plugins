@@ -192,7 +192,7 @@ jackTest("osw.inbox() should callback with a single status item with a status Ob
 
 
 
-jackTest("osw.inbox() should callback with a single status item with a picture Object.",
+jackTest("osw.inbox() should callback with a single status item with a photo Object.",
          function (mockConnection) {
              var called = 0;
              jack.expect("mockConnection.sendIQ")
@@ -206,10 +206,8 @@ jackTest("osw.inbox() should callback with a single status item with a picture O
 							+ 	'<uri>somebody@somewhere.com/outthere</uri>'
 							+ '</activity:actor>'
 							+ '<object xmlns="http://activitystrea.ms/spec/1.0/">'
-							+ 	'<object-type>http://onesocialweb.org/spec/1.0/object/picture</object-type>'
-								// FIXME jquery.xmlns.js has html namespace registered with trailing slash. 
-								//       find out if this matters. if so, make them agree to the correct one.
-							+ 	'<link xmlns="http://www.w3.org/1999/xhtml/" rel="alternate" href="http://example.com/image"/>'
+							+ 	'<object-type>http://onesocialweb.org/spec/1.0/object/photo</object-type>'
+							+ 	'<link xmlns="http://www.w3.org/1999/xhtml" rel="alternate" href="http://example.com/image"/>'
 							+ '</object>'
 							+ '</entry></item>'
 							+ '</items></pubsub></iq>'));
@@ -222,8 +220,10 @@ jackTest("osw.inbox() should callback with a single status item with a picture O
 				equals(activity.objects.length, 1, "1 Object");
 
 				var object = activity.objects[0];
-				equals(object.objectType, 'http://onesocialweb.org/spec/1.0/object/picture', "Type");
-				equals(object.picture, 'http://example.com/image', "Picture");
+				equals(object.objectType, 'http://onesocialweb.org/spec/1.0/object/photo', "Type");
+				equals(object.photo, 'http://example.com/image', "Photo");
+
+				console.dir(object);
 
              });
 			oswPlugin.inbox();
