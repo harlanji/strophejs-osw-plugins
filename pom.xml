@@ -48,6 +48,15 @@
 			<version>[1.0,1.1)</version>
 			<type>javascript</type>
 		</dependency>
+
+		<dependency>
+			<groupId>com.devspan.vendor.jack</groupId>
+			<artifactId>jack</artifactId>
+			<version>[1.0,1.1)</version>
+			<type>javascript</type>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<scm>
