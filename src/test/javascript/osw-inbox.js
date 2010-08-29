@@ -2,8 +2,8 @@
  * Modeled after roster.js
  */
 
-var oswPlugin = Strophe._connectionPlugins["osw"];
-module("plugins.Osw", {
+var oswPlugin = Strophe._connectionPlugins["inbox"];
+module("plugins.Inbox", {
            setup: function() {
 
            },
@@ -222,8 +222,6 @@ jackTest("osw.inbox() should callback with a single status item with a photo Obj
 				var object = activity.objects[0];
 				equals(object.objectType, 'http://onesocialweb.org/spec/1.0/object/photo', "Type");
 				equals(object.photo, 'http://example.com/image', "Photo");
-
-				console.dir(object);
 
              });
 			oswPlugin.inbox();
